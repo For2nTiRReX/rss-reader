@@ -1,0 +1,17 @@
+{
+    "extends": "../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "rss-reader",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "rss-reader",
+            "kebab-case"
+        ]
+    }
+}
