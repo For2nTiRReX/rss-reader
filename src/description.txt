@@ -1,0 +1,15 @@
+[2/26/18, 12:13:55 PM] Alex Serdukov: Develop a simple RSS reader application
+
+
+
+Notes
+
+
+You may use any UI library (bootstrap, material etc)
+App viewport should fit to window size and resize with window. On feed area & preview area should appears scrollbars (can use default ones by overflow: auto)
+You may use any library to load & parse RSS feeds (e.g. https://github.com/bobby-brennan/rss-parser)
+All loading stuff should be placed in the service
+Use rx/observable to wrap async calls and subscribe to results
+Create a simple model for store feed item. Service should convert parsed RSS to collection of models
+Rss link form, feed and preview area should be in the separate components
+ng build prod shouldn’t output any notices/warnings

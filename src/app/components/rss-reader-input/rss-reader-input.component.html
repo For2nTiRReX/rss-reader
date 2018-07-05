@@ -1,0 +1,8 @@
+<form [formGroup]="rssForm" novalidate>
+    <label for="rssUrl">Rss url</label>
+    <input class="form-control" type="text" placeholder="Put url here" name="rssUrl" id="rssUrl" formControlName="rssUrl" required>
+    <div *ngIf="formErrors.rssUrl" class="alert alert-danger">
+        {{ formErrors.rssUrl }}
+    </div>
+    <button class="btn btn-primary" (click)="getRss()">Get rss</button>
+</form>

@@ -46,9 +46,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/styles/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/rss-parser/dist/rss-parser.min.js"
+            ]
           },
           "configurations": {
             "production": {
