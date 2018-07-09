@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+#app-description {
+  text-align: center;
+  width: 100%;
+  text-align: center;
+}
+
+#global-router-wrapper {
+  .rss-viewport-area {
+    height: 95vh;
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    .output-area {
+      max-height: calc(100% - 142px);
+      overflow: auto;
+      margin-top: 20px;
+      position: relative;
+    }
+    .rss-output-wrapper {
+      .table {
+        table-layout: fixed;
+        tr {
+          td,th {
+            &:nth-child(1) {
+              width: 5%;
+            }
+            &:nth-child(2) {
+              width: 20%;
+            }
+            &:nth-child(3) {
+              width: 35%;
+            }
+            &:nth-child(4) {
+              width: 15%;
+            }
+            &:nth-child(5) {
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.rss-search-wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .btn {
+    min-width: 140px;
+  }
+}

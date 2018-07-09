@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 declare var RSSParser: any;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class RssParserService {
 
@@ -17,7 +17,7 @@ export class RssParserService {
 
   constructor() {
       this.parser = new RSSParser();
-      this.CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+      this.CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
       // this.getRssFeed('https://www.reddit.com/.rss');
       // 'https://www.nasa.gov/rss/dyn/NASA-in-Silicon-Valley.rss'
       // 'https://www.reddit.com/.rss'
@@ -26,11 +26,20 @@ export class RssParserService {
   public getRssFeed(url: string) {
       let rssFeed: RssFeed;
         this.parser.parseURL(this.CORS_PROXY + url, (err, feed) => {
+            console.log(feed);
             if (feed.title && feed.feedUrl && feed.link) {
                 rssFeed = new RssFeed(feed.title, feed.feedUrl, feed.link);
                 if (feed.items) {
                   rssFeed.items = feed.items.map(feedItem => {
-                    return new RssItem( feedItem.title, feedItem.content, feedItem.author, feedItem.link );
+                    const addFields = {};
+                    Object.keys(feedItem).map((objectKey) => {
+                        const value = feedItem[objectKey];
+                        if ( objectKey === 'title' || objectKey === 'content' || objectKey === 'link' ) {
+                            return;
+                        }
+                        addFields[objectKey] = value;
+                    });
+                    return new RssItem( feedItem.title, feedItem.content, feedItem.link, addFields );
                   });
                 }
             }

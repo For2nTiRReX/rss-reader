@@ -17,6 +17,7 @@ export class RssReaderOutputComponent implements OnInit {
   ngOnInit() {
     this.rssParser.$recipeSubscription.subscribe(
        item => {
+           console.log(item.items);
            this.rssCollection = item.items;
        }
     );

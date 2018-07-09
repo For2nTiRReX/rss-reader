@@ -1,20 +1,18 @@
-<rss-reader-rss-reader-input></rss-reader-rss-reader-input>
-<div class="list-rss-items-wrapper" *ngIf="rssCollection">
-  <table class="table list-rss-items">
-    <tr>
-      <th>№</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Author</th>
-      <th>Link</th>
-    </tr>
-    <tr *ngFor="let item of rssCollection; let i = index;">
-      <td>{{i+1}}</td>
-      <td>{{item.title}}</td>
-      <td [innerHTML]="item.content"></td>
-      <td>{{item.author}}</td>
-      <td>{{item.link}}</td>
-    </tr>
-  </table>
+<div class="rss-output-wrapper" *ngIf="rssCollection">
+  <div class="list-rss-items-wrapper" *ngIf="rssCollection">
+    <table class="table table-bordered list-rss-items">
+      <tr>
+        <th>№</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Link</th>
+      </tr>
+      <tr *ngFor="let item of rssCollection; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{item.title}}</td>
+        <td [innerHTML]="item.content"></td>
+        <td>{{item.link}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
-

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { RssReaderOutputComponent } from './components/rss-reader-output/rss-reader-output.component';
 import { RootRoutingModule } from './root-routing.module';
 import { RssReaderInputComponent } from './components/rss-reader-input/rss-reader-input.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RssReaderOutputComponent,
-    RssReaderInputComponent
+    RssReaderInputComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

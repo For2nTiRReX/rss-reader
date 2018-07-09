@@ -2,27 +2,18 @@ export class RssItem {
 
     title: string;
     content: string;
-    author: string;
     link: string;
-    pubDate?: string;
-    id?: string;
-    contentSnippet?: string;
+    addFields?: Object;
 
     constructor(
         title: string,
         content: string,
-        author: string,
         link: string,
-        pubDate?: string,
-        id?: string,
-        contentSnippet?: string,
+        addFields?: Object,
     ) {
         this.title = title;
         this.content = content;
-        this.author = author;
         this.link = link;
-        this.pubDate = pubDate ? pubDate : '';
-        this.id = id ? id : '';
-        this.contentSnippet = contentSnippet ? contentSnippet : '';
+        this.addFields = addFields ? addFields : {};
     }
 }
