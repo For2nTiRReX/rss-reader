@@ -8,14 +8,6 @@ const routes: Routes = [
         path: '',
         component: HomeComponent
     },
-    // {
-    //     path: 'game',
-    //     canActivate: [ PlayerAuthGuardService ],
-    //     component: PlayGameComponent
-    // },
-    // { path: 'top-players', component: TopPlayersComponent },
-    // { path: 'login', component: LoginComponent },
-
 ];
 
 

@@ -20,9 +20,6 @@ export class RssParserService {
       this.parser = new RSSParser();
       this.CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
       this.isRequestAvailable = true;
-      // this.getRssFeed('https://www.reddit.com/.rss');
-      // 'https://www.nasa.gov/rss/dyn/NASA-in-Silicon-Valley.rss'
-      // 'https://www.reddit.com/.rss'
   }
 
   public getRssFeed(url: string) {
