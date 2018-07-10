@@ -11,11 +11,11 @@ export class RssReaderInputComponent implements OnInit {
 
   public rssForm: FormGroup;
   public messageBoxVisibility: boolean;
-  public formErrors: Object = {
+  public formErrors = {
       'rssUrl': '',
   };
 
-  public validationMessages: Object = {
+  public validationMessages = {
       'rssUrl': {
           'required': 'Url is required.',
           'minlength': 'Input at least 4 symbols.',
@@ -63,15 +63,13 @@ export class RssReaderInputComponent implements OnInit {
       }
   }
 
-    private getRss() {
-
+  public getRss() {
         if ( !this.rssForm.valid ) {
             this.messageBoxVisibility = true;
             return;
         }
-
         this.rssParser
             .getRssFeed( this.rssForm.get('rssUrl').value );
-    }
+  }
 
 }
