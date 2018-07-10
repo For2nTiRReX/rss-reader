@@ -47,6 +47,7 @@ export class RssParserService {
                 }
             }
             this.$recipeSubscription.next(rssFeed);
+            this.isRequestAvailable = true;
         });
       return this.$recipeSubscription;
   }

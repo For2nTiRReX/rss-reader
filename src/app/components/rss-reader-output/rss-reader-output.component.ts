@@ -18,7 +18,6 @@ export class RssReaderOutputComponent implements OnInit {
     this.rssParser.$recipeSubscription.subscribe(
        item => {
            this.rssCollection = item.items;
-           this.rssParser.isRequestAvailable = true;
        }
     );
   }
