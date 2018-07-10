@@ -14,19 +14,22 @@ export class RssParserService {
   parser: any;
   CORS_PROXY: string;
   $recipeSubscription: Subject<any> = new Subject();
+  isRequestAvailable: boolean;
 
   constructor() {
       this.parser = new RSSParser();
       this.CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+      this.isRequestAvailable = true;
       // this.getRssFeed('https://www.reddit.com/.rss');
       // 'https://www.nasa.gov/rss/dyn/NASA-in-Silicon-Valley.rss'
       // 'https://www.reddit.com/.rss'
   }
 
   public getRssFeed(url: string) {
+      if ( !this.isRequestAvailable ) { return; }
+      this.isRequestAvailable = false;
       let rssFeed: RssFeed;
         this.parser.parseURL(this.CORS_PROXY + url, (err, feed) => {
-            console.log(feed);
             if (feed.title && feed.feedUrl && feed.link) {
                 rssFeed = new RssFeed(feed.title, feed.feedUrl, feed.link);
                 if (feed.items) {

@@ -11,14 +11,14 @@ import {RssItem} from '../../models/rss-item';
 })
 export class RssReaderOutputComponent implements OnInit {
 
-  private rssCollection: Array<RssItem>;
+  public rssCollection: Array<RssItem>;
   constructor(private rssParser: RssParserService) { }
 
   ngOnInit() {
     this.rssParser.$recipeSubscription.subscribe(
        item => {
-           console.log(item.items);
            this.rssCollection = item.items;
+           this.rssParser.isRequestAvailable = true;
        }
     );
   }

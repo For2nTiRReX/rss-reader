@@ -9,13 +9,13 @@ import {RssParserService} from '../../services/rss-parser.service';
 })
 export class RssReaderInputComponent implements OnInit {
 
-  private rssForm: FormGroup;
-  private messageBoxVisibility: boolean;
-  private formErrors: Object = {
+  public rssForm: FormGroup;
+  public messageBoxVisibility: boolean;
+  public formErrors: Object = {
       'rssUrl': '',
   };
 
-  private validationMessages: Object = {
+  public validationMessages: Object = {
       'rssUrl': {
           'required': 'Url is required.',
           'minlength': 'Input at least 4 symbols.',
