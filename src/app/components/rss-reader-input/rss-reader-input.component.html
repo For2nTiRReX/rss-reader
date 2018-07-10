@@ -1,3 +1,14 @@
+<div class="examples-holder">
+    <h3 class="title">
+        You can try example rss:
+    </h3>
+    <div class="items-wrapper">
+
+    </div>
+    <div class="item text-info" *ngFor="let exampleLink of exampleLinks" (click)="putTestRssLink(exampleLink)">
+        {{exampleLink}}
+    </div>
+</div>
 <div class="rss-search-wrapper">
     <form [formGroup]="rssForm" novalidate>
         <!--<label for="rssUrl">Rss url</label>-->

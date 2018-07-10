@@ -9,6 +9,7 @@ import {RssParserService} from '../../services/rss-parser.service';
 })
 export class RssReaderInputComponent implements OnInit {
 
+  public exampleLinks: Array<string>;
   public rssForm: FormGroup;
   public messageBoxVisibility: boolean;
   public formErrors = {
@@ -26,6 +27,10 @@ export class RssReaderInputComponent implements OnInit {
   constructor( private rssParser: RssParserService, private fb: FormBuilder ) { }
 
   ngOnInit() {
+      this.exampleLinks = [
+          'https://www.nasa.gov/rss/dyn/NASA-in-Silicon-Valley.rss',
+          'https://www.reddit.com/.rss'
+      ];
       this.buildForm();
   }
 
@@ -70,6 +75,10 @@ export class RssReaderInputComponent implements OnInit {
         }
         this.rssParser
             .getRssFeed( this.rssForm.get('rssUrl').value );
+  }
+
+  public putTestRssLink(link: string): void {
+      this.rssForm.get('rssUrl').setValue(link);
   }
 
 }

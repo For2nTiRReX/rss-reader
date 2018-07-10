@@ -65,3 +65,20 @@
     min-width: 140px;
   }
 }
+
+.examples-holder {
+  text-align: center;
+  margin-bottom: 7px;
+  .title {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+  }
+  .item {
+    font-size: 12px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
