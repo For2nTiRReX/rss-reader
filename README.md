@@ -1,6 +1,10 @@
-#Demo
+# Demo
 
 You can check demo here [Demo](http://for2ntirrex.github.io/angular-rss-reader/) 
+
+# Technical requirements
+
+You can find it in description.txt
 
 # RssReader
 
